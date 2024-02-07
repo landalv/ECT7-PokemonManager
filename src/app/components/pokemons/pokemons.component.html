@@ -16,13 +16,19 @@
                         <li *ngIf="pokemon.imagen; else noimagen" class="text-center">
                             <img src="{{pokemon.imagen}}" alt="{{pokemon.nombre}}" class="mx-auto">
                         </li>
-                        <li>Nombre : <span *ngIf="'no na'; else na">{{pokemon.nombre}}</span></li>
-                        <li>Categoria : <span *ngIf="'no na'; else na">{{pokemon.categoria}}</span></li>
-                        <li>Tipo : <span *ngFor="let tipo of pokemon.tipo">
-                                <span *ngIf="'no na'; else na">{{tipo}} </span>
+                        <li>Nombre :
+                            <span *ngIf="pokemon.nombre; else na">{{pokemon.nombre}}</span>
+                        </li>
+                        <li>Categoria :
+                            <span *ngIf="pokemon.categoria; else na">{{pokemon.categoria}}</span>
+                        </li>
+                        <li>Tipo :
+                            <span *ngIf="pokemon.tipo; else na">
+                                <span *ngFor="let tipo of pokemon.tipo">{{tipo}}</span>
                             </span>
                         </li>
-                        <li>Talla : <span *ngIf="pokemon.altura; else na">{{pokemon.altura | number:'1.0-1'}} m</span>
+                        <li>Talla :
+                            <span *ngIf="pokemon.altura; else na">{{pokemon.altura | number:'1.0-1'}} m</span>
                         </li>
                         <li>Peso : <span *ngIf="pokemon.peso; else na">{{pokemon.peso | number:'1.0-1'}} kg</span>
                         </li>
